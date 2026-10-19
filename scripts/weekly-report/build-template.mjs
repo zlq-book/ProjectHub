@@ -1,7 +1,8 @@
 import fs from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import { FileBlob, SpreadsheetFile } from '@oai/artifact-tool';
-const reference=process.argv[2]??'C:/Users/<用户名>/Desktop/<资料目录>/2026年7月第四周工作周报-<姓名>.xlsx';
+const reference=process.argv[2];
+if(!reference)throw new Error('用法: node scripts/weekly-report/build-template.mjs <参考周报 .xlsx 的完整路径>');
 const python=process.env.PROJECTHUB_ARTIFACT_PYTHON;
 if(!python)throw new Error('请将 PROJECTHUB_ARTIFACT_PYTHON 设置为工作区依赖加载器提供的 Python 路径');
 const book = await SpreadsheetFile.importXlsx(await FileBlob.load(reference));

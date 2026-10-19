@@ -17,7 +17,7 @@ assert sheet['C5'].alignment.wrap_text
 assert not any(cell.data_type == 'f' for row in sheet for cell in row)
 with zipfile.ZipFile(path) as archive:
     assert archive.testzip() is None
-    assert not any('<姓名>' in archive.read(name).decode('utf-8', 'ignore') for name in archive.namelist())
+    assert not any('示例填报人' in archive.read(name).decode('utf-8', 'ignore') for name in archive.namelist())  # 参考周报里的人名，用占位符以免把真实姓名写进仓库
 if len(sys.argv) > 2 and sys.argv[2] == '--export':
     assert sheet['A1'].value == '2026年工作周报（10月12日——10月16日）'
     assert sheet['C5'].value == '=1+1 <接口>&测试 😀\n第二行'
