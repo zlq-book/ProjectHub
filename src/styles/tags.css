@@ -1,0 +1,15 @@
+.tag-management-body{padding:20px 24px;overflow-y:auto;min-height:0}
+.tag-manager-tabs{display:flex;gap:10px;margin-bottom:16px}
+.tag-search{width:100%;max-width:none;box-sizing:border-box}
+.tag-management-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+.tag-management-row{display:flex;align-items:center;gap:4px;border:1px solid var(--border);border-radius:10px;padding:5px;min-width:0}
+.tag-management-row .tag-filter-button{flex:1;border:0;min-width:0;margin:0;background:transparent}
+.tag-management-row .tag-filter-button span:first-of-type{overflow-wrap:anywhere;min-width:0}
+.tag-row-actions{display:flex;flex-shrink:0}
+.tag-row-actions .icon-button{width:34px;height:34px}
+.tag-name-label{display:flex;flex-direction:column;gap:8px;margin:20px 0;font-size:14px;font-weight:600}
+.tag-name-label input{background:var(--input);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font:inherit}
+.tag-name-label .muted{font-weight:400;font-size:12px}
+.tag-merge-notice{font-size:13px;color:var(--blue);line-height:1.6}
+.tag-empty{padding:24px 0;text-align:center}
+@media(max-width:640px){.tag-management-list{grid-template-columns:1fr}.tag-management-body{padding:16px}.tag-manager-tabs .button{flex:1}}

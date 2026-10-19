@@ -1,0 +1,11 @@
+node_modules/
+.npm-cache/
+dist/
+src-tauri/target/
+.toolchain/
+*.tsbuildinfo
+*.log
+test-results/
+
+.verification/
+*.xlsx.inspect.ndjson

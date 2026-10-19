@@ -1,0 +1,15 @@
+import fs from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import { FileBlob, SpreadsheetFile } from '@oai/artifact-tool';
+const reference=process.argv[2]??'C:/Users/<用户名>/Desktop/<资料目录>/2026年7月第四周工作周报-<姓名>.xlsx';
+const python=process.env.PROJECTHUB_ARTIFACT_PYTHON;
+if(!python)throw new Error('请将 PROJECTHUB_ARTIFACT_PYTHON 设置为工作区依赖加载器提供的 Python 路径');
+const book = await SpreadsheetFile.importXlsx(await FileBlob.load(reference));
+const sheet = book.worksheets.getItemAt(0);
+sheet.name = '工作周报';
+for (const cell of ['A1','A2','A3','B16',...Array.from({length:11},(_,i)=>`C${i+5}`)]) sheet.getRange(cell).clear({applyTo:'contents'});
+book.recalculate();
+await (await SpreadsheetFile.exportXlsx(book)).save('src-tauri/resources/weekly-report-template.xlsx');
+execFileSync(python,['-m','zipfile','-e','src-tauri/resources/weekly-report-template.xlsx','src-tauri/resources/weekly-report'],{stdio:'inherit'});
+await fs.writeFile('src-tauri/resources/weekly-report-template-contract.json', JSON.stringify({sheet:'工作周报',title:'A1',department:'A2',reporter:'A3',outcomes:['C5','C6','C7','C8'],difficulties:['C9','C10','C11'],plans:['C12','C13','C14','C15'],reflection:'B16'},null,2));
+console.log('固定模板已生成');

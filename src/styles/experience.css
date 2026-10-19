@@ -1,0 +1,60 @@
+/* 统一工具界面的层级、焦点和操作反馈，沿用现有主题变量。 */
+:root{--blue:#1765c9;--blue-soft:#edf4ff;--on-action:#fff;--focus-ring:#1765c9}
+[data-theme=dark]{--blue:#8dbbff;--blue-soft:#293d59;--on-action:#14243a;--focus-ring:#a8cbff}
+body{font-family:"Segoe UI","Microsoft YaHei UI","Microsoft YaHei",sans-serif}
+button,input,select,textarea{font-family:inherit}
+button{touch-action:manipulation}
+button:disabled{cursor:not-allowed;opacity:.58}
+.button{min-height:36px;transition:background-color .15s,border-color .15s,color .15s}
+.button.primary{color:var(--on-action)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px}
+.skip-link{position:fixed;top:8px;left:12px;z-index:1000;transform:translateY(-180%);padding:10px 16px;border:2px solid var(--focus-ring);background:var(--panel);color:var(--text);border-radius:4px}
+.skip-link:focus{transform:none}
+.workspace:focus{outline:none}
+.workspace-context{flex:1;min-width:0;display:flex;align-items:center;gap:14px}
+.workspace-context strong{font-size:14px;color:var(--text);font-weight:600}
+.workspace-context>span{font-size:12px;color:var(--muted)}
+.home-start{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:4px 0 22px;margin-bottom:20px;border-bottom:1px solid var(--border)}
+.home-start h2{font-size:20px;margin:0 0 8px;font-weight:600}
+.home-start p{color:var(--muted);line-height:1.7;font-size:13px;margin:0;max-width:40em}
+.home-shortcuts{display:flex;gap:8px;flex-wrap:wrap}
+.home-shortcuts button{display:flex;align-items:center;gap:8px;min-height:38px;padding:8px 12px;background:var(--panel);border:1px solid var(--border);color:var(--secondary);border-radius:5px;cursor:pointer;font-size:13px}
+.home-shortcuts button:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-soft)}
+.home-shortcuts button>svg:last-child{margin-left:4px}
+.project-management-actions{margin-top:2px;gap:8px}
+.project-management-actions .button{background:transparent}
+.center-metrics{display:flex;flex-wrap:wrap;gap:0;border-block:1px solid var(--border);margin:12px 0 20px}
+.center-metric{flex:1;min-width:150px;box-shadow:none;background:transparent;border:0;border-right:1px solid var(--border);border-radius:0;padding:12px 18px}
+.center-metric:last-child{border-right:0}
+.center-metric strong{font-size:22px;line-height:1.6}
+.center-filters{gap:10px;flex-wrap:wrap;margin:12px 0}
+.development-table th,.project-table th{position:sticky;top:0;z-index:1;background:var(--panel)}
+.development-table .text-button{min-height:34px}
+.center-chart{min-height:140px}
+.weekly-workspace{padding-top:4px;max-width:1120px}
+.weekly-heading h1{font-size:23px}
+.weekly-preferences{border:1px solid var(--border);border-radius:5px;padding:12px 14px!important;margin:14px 0 18px;background:var(--input)}
+.weekly-preferences summary{font-weight:600;font-size:13px}
+.weekly-preferences summary>span{font-weight:400;color:var(--muted);font-size:12px;margin-left:12px}
+.weekly-material-toolbar{display:flex;align-items:end;gap:10px;flex-wrap:wrap;margin:16px 0}
+.weekly-material-toolbar>label{display:grid;gap:7px;flex:1;min-width:200px;font-size:13px}
+.weekly-material-toolbar>span,.save-state{font-size:12px;color:var(--muted)}
+.weekly-projects{max-height:250px;overflow:auto;padding:4px}
+.weekly-projects label{min-height:30px}
+.weekly-materials summary{padding:4px 0}
+.weekly-outcomes .weekly-section-title,.weekly-editor-toolbar{gap:10px}
+.weekly-editor-toolbar>p{flex:1;min-width:220px;font-size:13px;line-height:1.7}
+.weekly-version-picker{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.weekly-version-picker select{max-width:180px;padding:7px 9px;border:1px solid var(--border);border-radius:4px;background:var(--panel);color:var(--text)}
+.weekly-footer{position:sticky;bottom:-12px;background:var(--panel);z-index:2;padding:14px 0;margin-top:12px;box-shadow:0 -6px 14px color-mix(in srgb,var(--panel) 85%,transparent)}
+.weekly-history details{padding:14px 0}
+.weekly-history-row:hover{background:var(--hover)}
+.settings-advanced{border:1px solid var(--border);padding:12px 14px;border-radius:5px;background:var(--input);margin:8px 0}
+.settings-advanced summary{cursor:pointer;font-size:13px;color:var(--secondary)}
+.settings-advanced[open]>label{display:flex;flex-direction:column;gap:7px;margin-top:14px}
+.settings-advanced small{font-size:12px;line-height:1.6;color:var(--muted)}
+.theme-choice[aria-pressed=true]{border-color:var(--blue);background:var(--blue-soft);color:var(--blue)}
+.error-message,.success-message{line-height:1.7;overflow-wrap:anywhere}
+@media(max-width:1060px){.home-start{align-items:start;flex-direction:column;gap:14px}.home-shortcuts{width:100%}.home-shortcuts button{flex:1;justify-content:center}.weekly-editor-toolbar>p{flex-basis:100%}}
+@media(max-width:760px){.workspace-context{flex-direction:column;align-items:start;gap:3px}.workspace-context>span{font-size:11px}.home-start{padding-bottom:16px;margin-bottom:16px}.home-shortcuts{display:grid;grid-template-columns:1fr}.home-shortcuts button{justify-content:start}.home-shortcuts button>svg:last-child{margin-left:auto}.center-metric{min-width:120px;padding:10px;font-size:12px}.center-metric strong{font-size:19px}.weekly-preferences summary>span{display:block;margin:6px 0 0}.weekly-material-toolbar>label{min-width:100%}.weekly-footer{bottom:-12px;padding-bottom:20px}.weekly-footer .button{flex:1}.weekly-version-picker{max-width:100%;flex-wrap:wrap}.weekly-heading{gap:12px}.weekly-heading .weekly-inline-actions{width:100%}.weekly-heading .weekly-inline-actions .button{flex:1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}

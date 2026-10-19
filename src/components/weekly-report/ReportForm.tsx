@@ -1,0 +1,8 @@
+import type { ReportContent } from '../../types/weeklyReport';
+export default function ReportForm({ content, onChange }: {
+    content: ReportContent;
+    onChange: (content: ReportContent) => void;
+}) {
+    function list(key: 'difficulties' | 'plans', label: string, max: number) { return <section><div className="weekly-section-title"><h2>{label}</h2><span>{content[key].length}/{max}</span><button className="button" disabled={content[key].length >= max} onClick={() => onChange({ ...content, [key]: [...content[key], ''] })}>添加条目</button></div>{content[key].map((text, i) => <div className="weekly-list-edit" key={i}><span>{i + 1}</span><textarea aria-label={`${label} ${i + 1}`} rows={2} maxLength={4000} value={text} onChange={e => onChange({ ...content, [key]: content[key].map((v, n) => n === i ? e.target.value : v) })}/><button className="button" onClick={() => onChange({ ...content, [key]: content[key].filter((_, n) => n !== i) })}>移除</button></div>)}{!content[key].length && <p className="muted">本栏留空</p>}</section>; }
+    return <div className="weekly-report-form"><div className="weekly-fields"><label>所属部门<input maxLength={200} value={content.department} onChange={e => onChange({ ...content, department: e.target.value })}/></label><label>填报人<input maxLength={100} value={content.reporter} onChange={e => onChange({ ...content, reporter: e.target.value })}/></label></div>{list('difficulties', '困难/需要协调解决的问题', 3)}{list('plans', '下周主要工作计划', 4)}<section><h2>本周感悟/在工作中提炼的经验、知识和技能</h2><textarea aria-label="周报感悟" rows={5} maxLength={8000} value={content.reflection} onChange={e => onChange({ ...content, reflection: e.target.value })}/></section></div>;
+}

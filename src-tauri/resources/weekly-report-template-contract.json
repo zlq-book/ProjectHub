@@ -1,0 +1,24 @@
+{
+  "sheet": "工作周报",
+  "title": "A1",
+  "department": "A2",
+  "reporter": "A3",
+  "outcomes": [
+    "C5",
+    "C6",
+    "C7",
+    "C8"
+  ],
+  "difficulties": [
+    "C9",
+    "C10",
+    "C11"
+  ],
+  "plans": [
+    "C12",
+    "C13",
+    "C14",
+    "C15"
+  ],
+  "reflection": "B16"
+}

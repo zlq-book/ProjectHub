@@ -1,0 +1,91 @@
+.version-pill { display: inline-block; font-size: 10px; }
+.brand { gap: 8px; font-size: 22px; }
+.batch-toggle { min-height: 34px; font-size: 12px; padding: 6px 10px; box-shadow: none; }
+.batch-toggle.active { color: var(--blue); border-color: var(--blue); background: var(--blue-soft); }
+.toast-batch { bottom: auto; top: 90px; }
+.filter-toolbar { flex-wrap: wrap; }
+.card-checkbox { position: absolute; top: 14px; right: 12px; z-index: 1; padding: 6px; display: flex; cursor: pointer; }
+.card-checkbox input, .candidate input { width: 17px; height: 17px; margin: 0; accent-color: var(--blue); cursor: pointer; }
+.batch-card .card-heading { padding-right: 27px; }
+.batch-card .card-bottom { padding-right: 0; }
+.batch-toolbar {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  margin-top: 15px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 -5px 25px #16315d12;
+}
+.batch-summary { display: flex; align-items: center; gap: 8px; color: var(--secondary); font-size: 13px; flex-wrap: wrap; }
+.batch-summary > svg { color: var(--blue); }
+.batch-summary > span { color: var(--muted); font-size: 11px; }
+.batch-actions { display: flex; gap: 7px; align-items: center; flex-wrap: wrap; margin-top: 11px; }
+.batch-actions .button { font-size: 11px; min-height: 34px; padding: 7px 10px; box-shadow: none; }
+.batch-danger { color: #b44646; }
+.batch-toolbar > p { font-size: 11px; color: var(--muted); margin-top: 10px; }
+.batch-confirm-body { padding: 22px 27px; display: grid; gap: 18px; }
+.batch-project-list { margin: 0; padding: 0; list-style: none; max-height: 240px; overflow: auto; border: 1px solid var(--border); border-radius: 8px; }
+.batch-project-list li { display: flex; flex-direction: column; gap: 5px; padding: 11px 13px; border-bottom: 1px solid var(--border); font-size: 13px; }
+.batch-project-list li:last-child { border-bottom: 0; }
+.batch-project-list span { color: var(--muted); font-size: 11px; overflow-wrap: anywhere; }
+.batch-category-label, .import-category { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--secondary); flex-wrap: wrap; }
+.batch-category-label select, .import-category select, .scan-options select { border: 1px solid var(--border); color: var(--text); background: var(--input); padding: 9px 12px; border-radius: 7px; font-size: 12px; }
+.modal-wide { width: min(850px, calc(100vw - 32px)); }
+.discovery-body { padding: 22px 27px; display: grid; gap: 17px; }
+.discovery-fields { border: 0; padding: 0; margin: 0; display: grid; gap: 12px; min-width: 0; }
+.discovery-fields > label { display: grid; gap: 8px; font-size: 13px; color: var(--secondary); }
+.discovery-fields textarea { width: 100%; min-height: 88px; max-height: 180px; resize: vertical; background: var(--input); border: 1px solid var(--border); border-radius: 8px; padding: 11px 12px; color: var(--text); font-size: 12px; line-height: 1.8; }
+.scan-options { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.scan-options > label { display: flex; align-items: center; gap: 9px; font-size: 12px; color: var(--muted); }
+.scan-options > .primary { margin-left: auto; }
+.scan-progress { display: flex; align-items: center; gap: 14px; padding: 18px; background: var(--blue-soft); color: var(--blue); border-radius: 8px; }
+.scan-progress strong { font-size: 13px; }
+.scan-progress p { margin-top: 5px; color: var(--secondary); font-size: 11px; line-height: 1.7; }
+.scan-progress .button { margin-left: auto; }
+.discovery-results-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--secondary); flex-wrap: wrap; }
+.discovery-results-heading > span:first-child { display: flex; align-items: center; gap: 7px; }
+.discovery-results-heading svg { color: var(--green); }
+.discovery-results-heading > span:last-child { color: var(--muted); font-size: 11px; }
+.discovery-filters { display: flex; align-items: center; gap: 10px; }
+.discovery-filters .search-box { width: 100%; }
+.discovery-filters .button { font-size: 12px; }
+.candidate-list { max-height: 300px; overflow: auto; border: 1px solid var(--border); border-radius: 8px; }
+.candidate { display: flex; align-items: flex-start; gap: 13px; padding: 14px; border-bottom: 1px solid var(--border); cursor: pointer; }
+.candidate:last-child { border: 0; }
+.candidate input { flex-shrink: 0; margin-top: 2px; }
+.candidate > div { min-width: 0; flex: 1; }
+.candidate strong { font-size: 13px; color: var(--text); overflow-wrap: anywhere; }
+.candidate p { margin: 6px 0 9px; font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+.candidate .tag { font-size: 11px; }
+.candidate-existing { background: var(--bg); cursor: default; }
+.existing-label { font-size: 10px; border: 1px solid var(--border); color: var(--muted); padding: 3px 7px; border-radius: 4px; white-space: nowrap; }
+.candidate-empty { padding: 25px; color: var(--muted); text-align: center; font-size: 12px; line-height: 1.8; }
+.import-category > span { font-size: 11px; color: var(--muted); }
+.scan-warnings { border: 1px solid var(--border); border-radius: 7px; padding: 10px 13px; color: var(--secondary); font-size: 11px; }
+.scan-warnings summary { cursor: pointer; }
+.scan-warnings ul, .scan-report { padding-left: 18px; margin: 10px 0 0; line-height: 1.9; max-height: 180px; overflow: auto; overflow-wrap: anywhere; }
+.scan-report { margin: 0; font-size: 12px; color: var(--secondary); }
+.discovery-help { display: flex; gap: 7px; align-items: flex-start; color: var(--muted); font-size: 11px; line-height: 1.8; }
+.discovery-help svg { flex-shrink: 0; margin-top: 2px; }
+
+@media (max-width: 1250px) {
+  .brand { font-size: 20px; gap: 7px; padding-left: 7px; padding-right: 0; }
+  .version-pill { display: none; }
+}
+@media (max-width: 760px) {
+  .batch-toggle { font-size: 11px; min-height: 34px; padding: 6px 8px; }
+  .filter-selects { flex: 1; }
+  .view-actions { margin-left: auto; }
+  .batch-toolbar { padding: 12px; }
+  .batch-actions .button { min-height: 38px; }
+  .batch-confirm-body, .discovery-body { padding: 18px 20px; }
+  .discovery-filters { flex-wrap: wrap; }
+  .scan-options { gap: 8px; }
+  .scan-options > .primary { margin-left: 0; }
+  .scan-options > label { gap: 5px; }
+  .scan-progress { flex-wrap: wrap; padding: 15px; }
+  .scan-progress .button { margin-left: 0; }
+}

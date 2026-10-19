@@ -1,0 +1,22 @@
+.sidebar-api { flex-shrink: 0; padding-top: 12px; margin-top: 12px; border-top: 1px solid var(--border); }
+.api-model-row { display: flex; gap: 8px; min-width: 0; }
+.api-model-row input { flex: 1; min-width: 0; }
+.api-model-row .button, .api-test-row .button { flex-shrink: 0; white-space: nowrap; }
+.api-test-row { display: flex; align-items: center; gap: 12px; }
+.api-test-row small { line-height: 1.7; }
+.sidebar-api .nav-item { border: 1px solid var(--border); background: var(--panel); }
+.detect-actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; flex-wrap: wrap; }
+.detect-actions .button { white-space: nowrap; }
+.ai-data-note { font-size: 11px; line-height: 1.7; overflow-wrap: anywhere; }
+.ai-result { padding: 14px; border: 1px solid var(--border); border-radius: 5px; background: var(--input); }
+.ai-result h3 { font-size: 14px; margin-bottom: 12px; }
+.ai-result dl { display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 10px 12px; font-size: 12px; line-height: 1.7; margin: 0 0 12px; }
+.ai-result dt { color: var(--muted); }
+.ai-result dd { margin: 0; color: var(--text); white-space: pre-wrap; overflow-wrap: anywhere; }
+.ai-result .detect-actions { margin-top: 12px; }
+@media (max-width: 760px) {
+  .api-model-row, .api-test-row { flex-wrap: wrap; }
+  .sidebar-api { width: 100%; }
+  .sidebar-api .nav-item { justify-content: center; }
+  .detect-row { align-items: flex-start; flex-wrap: wrap; gap: 8px; }
+}

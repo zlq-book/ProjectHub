@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "main-capability",
+  "description": "主窗口仅通过应用命令使用本地功能，不向前端授予通用文件或 Shell 执行权限。",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}
